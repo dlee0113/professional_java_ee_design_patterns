@@ -1,0 +1,5 @@
+@Alternative
+public class UserDataRepositoryMongo implements UserDataRepository {...}
+
+@Alternative
+public class UserDataRepositoryMySQL implements UserDataRepository {...}

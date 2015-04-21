@@ -1,0 +1,28 @@
+@Decorator
+public class PriceDiscountDecorator implements Product {
+@Any
+@Inject
+@Delegate
+private Product product;
+public String generateLabel() {
+product.setPrice(product.getPrice() * 0.5);
+product.setLabel(product.getLabel() + " (Discounted)");
+return product.generateLabel();
+}
+// Not all methods shown
+}
+
+/*
+<decorators>
+<class>com.devchronicles.decorator.PriceDiscountDecorator </class>
+</decorators>
+*/
+
+/*
+@Any
+@Inject
+Product product;
+public void createPriceList(){
+System.out.println("Label: " + product.generateLabel());
+}
+*/

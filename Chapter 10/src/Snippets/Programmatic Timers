@@ -1,0 +1,19 @@
+public void setTimer(){
+timerService.createTimer(30000, "New timer");
+}
+
+@Timeout
+public void performTask() {
+System.out.println("Simple Task performed");
+}
+
+@Resource
+TimerService timerService;
+
+SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy ‘at’ HH:mm");
+Date date = formatter.parse("26/01/2015 at 17:56");
+timerService.createSingleActionTimer(date, new TimerConfig());
+
+ScheduleExpression expression = new ScheduleExpression();
+expression.second("*/10").minute("*").hour("*");
+timerService.createCalendarTimer(expression);

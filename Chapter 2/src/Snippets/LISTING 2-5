@@ -1,0 +1,5 @@
+@AroundInvoke
+public logger(InvocationContext ic) throws Exception {
+	Object[] params = ic.getParameters();
+	logger.warning("Parameters passed: " + params);
+}

@@ -1,0 +1,19 @@
+package com.devchronicles.interceptor;
+  
+import javax.interceptor.Interceptors;
+  
+@Secure
+public class SomeBusinessBean {
+  
+    public void startService(){
+          // Complex business logic
+          Logger.getLogger("AppLog").info("done...");
+    }
+   
+    public void startAnotherService(){
+          // Complex business logic
+          Logger.getLogger("AppLog").info("done again...");
+    }
+}
+   
+Correct indentation for listing 8-11

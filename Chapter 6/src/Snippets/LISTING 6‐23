@@ -1,0 +1,13 @@
+public class EventProducer {
+	@Produces
+	@Named("Logging")
+	public String messageAFactory() {
+		return "A message";
+	}
+
+	@Produces
+	@Named("Message")
+	public String messageBFactory() {
+		return "Another message";
+	}
+}

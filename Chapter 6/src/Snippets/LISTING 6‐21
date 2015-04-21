@@ -1,0 +1,13 @@
+public class EventProducer2 {
+	@Produces
+	@MyEvent(MyEvent.Type.LOGGING)
+	public String messageAFactory() {
+		return "A message";
+	}
+
+	@Produces
+	@MyEvent(MyEvent.Type.MESSAGE)
+	public String messageBFactory() {
+		return "Another message";
+	}
+}

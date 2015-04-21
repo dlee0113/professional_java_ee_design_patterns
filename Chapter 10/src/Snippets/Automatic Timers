@@ -1,0 +1,18 @@
+@Schedule(second="*/1", minute="*", hour="*")
+public void executeTask(){
+System.out.println("Task performed");
+}
+
+@Schedule(hour = "23", minute = "59", timezone = "CET", info = "Generates nightly
+report")
+public void executeTask(){
+System.out.println("Task performed");
+}
+
+@Schedules({
+@Schedule(dayOfMonth = "1"),
+@Schedule(dayOfWeek = "Mon,Tue,Wed,Thu,Fri", hour = "8")
+})
+public void executeTask() {
+System.out.println("Task performed");
+}

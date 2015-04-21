@@ -1,0 +1,9 @@
+// Create the observer and subject
+NewsAgency newsAgency = new NewsAgency();
+RadioChannel radioChannel = new RadioChannel();
+// Register the observer with the subject
+newsAgency.register(radioChannel);
+// Now add some news headlines
+newsAgency.addNews("Breaking news: Life found on Mars");
+newsAgency.addNews("Update: Earth invasion imminent");
+newsAgency.addNews("Just in: Hail to our new Martian overlords");

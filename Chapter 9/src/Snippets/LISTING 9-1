@@ -1,0 +1,44 @@
+package com.devchronicles.asynchronous;
+import javax.annotation.PostConstruct;
+import javax.ejb.Singleton;
+import javax.ejb.Startup;
+import java.util.logging.Logger;
+import javax.ejb.Asynchronous;
+@Startup
+@Singleton
+public class MyLoggingBean {
+private Logger logger;
+@PostConstruct
+public void start(){
+logger = Logger.getLogger("MyGlobalLogger");
+logger.info("Well, I started first!!!");
+}
+public void logInfo(String msg){
+logger.info(msg);
+}
+@Asynchronous
+public void logAsync(String msg){
+logger.info(msg);
+}
+}
+
+/*
+
+//...
+public void logInfo(String msg){
+logger.info("Entering sync log");
+try{
+Thread.sleep(1000);
+} catch (InterruptedException e){}
+logger.info(msg);
+}
+@Asynchronouspublic void logAsync(String msg){
+logger.info("Entering async log");
+try{
+Thread.sleep(13000);
+} catch (InterruptedException e){}
+logger.info(msg);}
+//
+
+*/
+
